@@ -1,4 +1,4 @@
-module auth
+module github.com/vlad0003/auth_protos
 
 go 1.24.5
 
