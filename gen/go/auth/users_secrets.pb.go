@@ -7,11 +7,12 @@
 package users_secrets
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -119,7 +120,7 @@ func (x *CreateUserResponse) GetId() string {
 
 type LoginRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	UserID        string                 `protobuf:"bytes,1,opt,name=UserID,proto3" json:"UserID,omitempty"`
 	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -155,9 +156,9 @@ func (*LoginRequest) Descriptor() ([]byte, []int) {
 	return file_auth_users_secrets_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *LoginRequest) GetEmail() string {
+func (x *LoginRequest) UserId() string {
 	if x != nil {
-		return x.Email
+		return x.UserID
 	}
 	return ""
 }
