@@ -4,7 +4,7 @@
 // - protoc             v6.31.1
 // source: auth/users_secrets.proto
 
-package users_secrets
+package usersecretspb
 
 import (
 	context "context"

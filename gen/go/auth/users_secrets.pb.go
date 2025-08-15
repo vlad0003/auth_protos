@@ -4,15 +4,14 @@
 // 	protoc        v6.31.1
 // source: auth/users_secrets.proto
 
-package users_secrets
+package usersecretspb
 
 import (
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
-
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -120,7 +119,7 @@ func (x *CreateUserResponse) GetId() string {
 
 type LoginRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserID        string                 `protobuf:"bytes,1,opt,name=UserID,proto3" json:"UserID,omitempty"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -156,9 +155,9 @@ func (*LoginRequest) Descriptor() ([]byte, []int) {
 	return file_auth_users_secrets_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *LoginRequest) UserId() string {
+func (x *LoginRequest) GetUserId() string {
 	if x != nil {
-		return x.UserID
+		return x.UserId
 	}
 	return ""
 }
@@ -223,16 +222,16 @@ const file_auth_users_secrets_proto_rawDesc = "" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1a\n" +
 	"\bpassword\x18\x03 \x01(\tR\bpassword\"$\n" +
 	"\x12CreateUserResponse\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"@\n" +
-	"\fLoginRequest\x12\x14\n" +
-	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"C\n" +
+	"\fLoginRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\"%\n" +
 	"\rLoginResponse\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token2\xa0\x01\n" +
 	"\vUserService\x12O\n" +
 	"\n" +
 	"CreateUser\x12\x1f.usersSecrets.CreateUserRequest\x1a .usersSecrets.CreateUserResponse\x12@\n" +
-	"\x05Login\x12\x1a.usersSecrets.LoginRequest\x1a\x1b.usersSecrets.LoginResponseB!Z\x1finternal/gen/auth;users_secretsb\x06proto3"
+	"\x05Login\x12\x1a.usersSecrets.LoginRequest\x1a\x1b.usersSecrets.LoginResponseB!Z\x1finternal/gen/auth;usersecretspbb\x06proto3"
 
 var (
 	file_auth_users_secrets_proto_rawDescOnce sync.Once
