@@ -84,8 +84,6 @@ func (x *CreateUserRequest) GetPassword() string {
 type CreateUserResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -123,20 +121,6 @@ func (*CreateUserResponse) Descriptor() ([]byte, []int) {
 func (x *CreateUserResponse) GetId() string {
 	if x != nil {
 		return x.Id
-	}
-	return ""
-}
-
-func (x *CreateUserResponse) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *CreateUserResponse) GetEmail() string {
-	if x != nil {
-		return x.Email
 	}
 	return ""
 }
@@ -245,11 +229,9 @@ const file_auth_users_secrets_proto_rawDesc = "" +
 	"\x11CreateUserRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1a\n" +
-	"\bpassword\x18\x03 \x01(\tR\bpassword\"N\n" +
+	"\bpassword\x18\x03 \x01(\tR\bpassword\"$\n" +
 	"\x12CreateUserResponse\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
-	"\x05email\x18\x03 \x01(\tR\x05email\"@\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"@\n" +
 	"\fLoginRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\"%\n" +
