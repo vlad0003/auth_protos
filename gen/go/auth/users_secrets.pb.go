@@ -221,94 +221,6 @@ func (x *LoginResponse) GetSuccess() bool {
 	return false
 }
 
-type TestRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Test          string                 `protobuf:"bytes,1,opt,name=test,proto3" json:"test,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TestRequest) Reset() {
-	*x = TestRequest{}
-	mi := &file_auth_users_secrets_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TestRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TestRequest) ProtoMessage() {}
-
-func (x *TestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_auth_users_secrets_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TestRequest.ProtoReflect.Descriptor instead.
-func (*TestRequest) Descriptor() ([]byte, []int) {
-	return file_auth_users_secrets_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *TestRequest) GetTest() string {
-	if x != nil {
-		return x.Test
-	}
-	return ""
-}
-
-type TestResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Test          string                 `protobuf:"bytes,1,opt,name=test,proto3" json:"test,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TestResponse) Reset() {
-	*x = TestResponse{}
-	mi := &file_auth_users_secrets_proto_msgTypes[5]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TestResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TestResponse) ProtoMessage() {}
-
-func (x *TestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_auth_users_secrets_proto_msgTypes[5]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TestResponse.ProtoReflect.Descriptor instead.
-func (*TestResponse) Descriptor() ([]byte, []int) {
-	return file_auth_users_secrets_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *TestResponse) GetTest() string {
-	if x != nil {
-		return x.Test
-	}
-	return ""
-}
-
 var File_auth_users_secrets_proto protoreflect.FileDescriptor
 
 const file_auth_users_secrets_proto_rawDesc = "" +
@@ -325,16 +237,11 @@ const file_auth_users_secrets_proto_rawDesc = "" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\")\n" +
 	"\rLoginResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\"!\n" +
-	"\vTestRequest\x12\x12\n" +
-	"\x04test\x18\x01 \x01(\tR\x04test\"\"\n" +
-	"\fTestResponse\x12\x12\n" +
-	"\x04test\x18\x01 \x01(\tR\x04test2\xdf\x01\n" +
-	"\vUserService\x12O\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess2\xa0\x01\n" +
+	"\vAuthService\x12O\n" +
 	"\n" +
 	"CreateUser\x12\x1f.usersSecrets.CreateUserRequest\x1a .usersSecrets.CreateUserResponse\x12@\n" +
-	"\x05Login\x12\x1a.usersSecrets.LoginRequest\x1a\x1b.usersSecrets.LoginResponse\x12=\n" +
-	"\x04Test\x12\x19.usersSecrets.TestRequest\x1a\x1a.usersSecrets.TestResponseB!Z\x1finternal/gen/auth;usersecretspbb\x06proto3"
+	"\x05Login\x12\x1a.usersSecrets.LoginRequest\x1a\x1b.usersSecrets.LoginResponseB!Z\x1finternal/gen/auth;usersecretspbb\x06proto3"
 
 var (
 	file_auth_users_secrets_proto_rawDescOnce sync.Once
@@ -348,24 +255,20 @@ func file_auth_users_secrets_proto_rawDescGZIP() []byte {
 	return file_auth_users_secrets_proto_rawDescData
 }
 
-var file_auth_users_secrets_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_auth_users_secrets_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_auth_users_secrets_proto_goTypes = []any{
 	(*CreateUserRequest)(nil),  // 0: usersSecrets.CreateUserRequest
 	(*CreateUserResponse)(nil), // 1: usersSecrets.CreateUserResponse
 	(*LoginRequest)(nil),       // 2: usersSecrets.LoginRequest
 	(*LoginResponse)(nil),      // 3: usersSecrets.LoginResponse
-	(*TestRequest)(nil),        // 4: usersSecrets.TestRequest
-	(*TestResponse)(nil),       // 5: usersSecrets.TestResponse
 }
 var file_auth_users_secrets_proto_depIdxs = []int32{
-	0, // 0: usersSecrets.UserService.CreateUser:input_type -> usersSecrets.CreateUserRequest
-	2, // 1: usersSecrets.UserService.Login:input_type -> usersSecrets.LoginRequest
-	4, // 2: usersSecrets.UserService.Test:input_type -> usersSecrets.TestRequest
-	1, // 3: usersSecrets.UserService.CreateUser:output_type -> usersSecrets.CreateUserResponse
-	3, // 4: usersSecrets.UserService.Login:output_type -> usersSecrets.LoginResponse
-	5, // 5: usersSecrets.UserService.Test:output_type -> usersSecrets.TestResponse
-	3, // [3:6] is the sub-list for method output_type
-	0, // [0:3] is the sub-list for method input_type
+	0, // 0: usersSecrets.AuthService.CreateUser:input_type -> usersSecrets.CreateUserRequest
+	2, // 1: usersSecrets.AuthService.Login:input_type -> usersSecrets.LoginRequest
+	1, // 2: usersSecrets.AuthService.CreateUser:output_type -> usersSecrets.CreateUserResponse
+	3, // 3: usersSecrets.AuthService.Login:output_type -> usersSecrets.LoginResponse
+	2, // [2:4] is the sub-list for method output_type
+	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -382,7 +285,7 @@ func file_auth_users_secrets_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_auth_users_secrets_proto_rawDesc), len(file_auth_users_secrets_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
